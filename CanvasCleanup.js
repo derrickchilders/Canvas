@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Make Canvas a little more usable
 // @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
@@ -39,17 +39,20 @@
         var jTableToSort = $(table);
         jTableToSort.find("tr").sort(SortByFirstColumnTextAscending).appendTo(jTableToSort);
     
-        var colors = ["blue", "black", "purple", "lime", "maroon"];
+        var colors = ["blue", "black", "green", "purple", "lime", "maroon"];
         var tableRows = $(table + " tr");
         var currentName = "ASDF";
-        var colorIndex = -1;
+        var colorIndex = 0;
         tableRows.find("td:eq(0)").each(function(index, value) {
             var name = $(value).text().split(" ")[0];
             if(name !== currentName) {
                 colorIndex+=1;
                 currentName = name;
+                if(colorIndex > colors.length)
+                    colorIndex = 0;
             }
-            $(value).find("a").css("color", colors[colorIndex]);
+            
+            $(value).find("a").css("color", colors[colorIndex-1]);
         });
         tableRows.find("td:eq(1)").each(function(index, value) {
             var grade = parseInt($(this).text());
