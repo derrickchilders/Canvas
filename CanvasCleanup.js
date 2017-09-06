@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      0.2
-// @description  try to take over the world!
-// @author       You
+// @version      0.3
+// @description  Make Canvas a little more usable
+// @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
 // @grant        none
 // ==/UserScript==
@@ -18,7 +18,6 @@
         $('.ic-DashboardCard').css('width', '200px');
         $('.ic-DashboardCard').css('margin', '0 10px 10px 0');
         $(".ic-DashboardCard__action-container").css("margin-bottom", "0px");
-        $('.ic-DashboardCard__header_hero.span').css('color', 'red');
         sortUsingNestedText($("#DashboardCard_Container"), "div.ic-DashboardCard", "h2");
     }
     function sortUsingNestedText(parent, childSelector, keySelector) {
