@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      0.6
+// @version      0.7
 // @description  Make Canvas a little more usable
 // @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
@@ -10,8 +10,10 @@
 
 (function() {
     'use strict';
-    fixGrades();
-    fixDashboard();
+    //fixGrades();
+    //fixDashboard();
+    setTimeout(fixGrades, 250);
+    setTimeout(fixDashboard, 250);
     
     function fixDashboard() {
         $('.ic-DashboardCard__header_hero').css('height', '0px');
