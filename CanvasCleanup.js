@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      0.8
+// @version      0.9
 // @description  Make Canvas a little more usable
 // @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
@@ -52,6 +52,7 @@
                 currentName = name;
                 if(colorIndex > colors.length)
                     colorIndex = 1;
+                $(tableRows).eq(index).css("border-top", "2px solid black");
             }
             
             $(value).find("a").css("color", colors[colorIndex-1]);
