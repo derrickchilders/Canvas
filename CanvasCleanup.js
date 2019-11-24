@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      0.11
 // @description  Make Canvas a little more usable
 // @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
