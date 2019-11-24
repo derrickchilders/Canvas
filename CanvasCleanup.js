@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canvas Cleaup
 // @namespace    http://tampermonkey.net/
-// @version      0.9
+// @version      0.10
 // @description  Make Canvas a little more usable
 // @author       Derrick Childers
 // @include      https://myccsd.instructure.com/*
@@ -60,9 +60,9 @@
         tableRows.find("td:eq(1)").each(function(index, value) {
             var grade = parseInt($(this).text());
             if    (isNaN(grade)) $(value).css("color", "white").css("font-size", "1.3em");
-            else if (grade < 70) $(value).css("color", "red").css("font-size", "1.2em");
-            else if (grade < 80) $(value).css("color", "orange").css("font-size", "1.1em");
-            else if (grade < 90) $(value).css("color", "green").css("font-size", "1.1em");
+            else if (grade < 69.5) $(value).css("color", "red").css("font-size", "1.2em");
+            else if (grade < 79.5) $(value).css("color", "orange").css("font-size", "1.1em");
+            else if (grade < 89.5) $(value).css("color", "green").css("font-size", "1.1em");
             else                 $(value).css("color", "green");
         });
     
